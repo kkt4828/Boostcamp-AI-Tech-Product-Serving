@@ -19,7 +19,7 @@ root_password = 'password'
 
 def main():
     st.title(
-        "Mask Classification Model - Docker Build Deploy(Modified) Github Action!!!!!")
+        "Mask Classification Model - Docker Build Deploy(Modified) Github Action!!!")
 
     with open("config.yaml") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
