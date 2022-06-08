@@ -18,16 +18,17 @@ root_password = 'password'
 
 
 def main():
-    st.title("Mask Classification Model - Docker Build Deploy(Modified)")
+    st.title(
+        "Mask Classification Model - Docker Build Deploy(Modified) Github Action!!")
 
     with open("config.yaml") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
-    
 
     model = load_model()
     model.eval()
 
-    uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg","png"])
+    uploaded_file = st.file_uploader(
+        "Choose an image", type=["jpg", "jpeg", "png"])
 
     if uploaded_file:
         image_bytes = uploaded_file.getvalue()
@@ -42,7 +43,7 @@ def main():
 
 
 @cache_on_button_press('Authenticate')
-def authenticate(password) ->bool:
+def authenticate(password) -> bool:
     return password == root_password
 
 
@@ -53,4 +54,3 @@ if authenticate(password):
     main()
 else:
     st.error('The password is invalid.')
-
